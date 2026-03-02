@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-decor">
+        <div class="heart heart-1">❤</div>
+        <div class="heart heart-2">❤</div>
+        <div class="heart heart-3">:3</div>
+        <div class="heart heart-4">:p</div>
+        <div class="heart heart-5">🐼</div>
+    </div>
+
+    <div class="book-container">
+        
+        <!-- Page 1: Cover -->
+        <div class="page active" id="page-1">
+            <div class="cover-content">
+                <h1>To My Dearest,</h1>
+                <p class="subtitle">I have something to tell you...</p>
+                <button class="open-btn" onclick="nextPage()">Open Book</button>
+            </div>
+        </div>
+
+        <div class="page" id="page-2">
+            <div class="book-content">
+                <div class="photo-frame">
+                    <img src="1.png" alt="Memory 1">
+                </div>
+                <div class="text-area">
+                    <p>Hey,</p>
+                    <p>I'm writing this because words sometimes get stuck in my throat when I'm nervous. 
+                        You are one of the most important people to me, 
+                        and I messed up... </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="page" id="page-3">
+            <div class="book-content">
+                <div class="photo-frame">
+                    <!-- 👇 TYPE YOUR FILE NAME HERE -->
+                    <img src="2.png" alt="Memory 2">
+                </div>
+                <div class="text-area">
+                    <p>I know saying sorry might not be enough right now, but I want you to know that I realize my mistake. I promise to be better...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 4 -->
+        <div class="page" id="page-4">
+            <div class="book-content">
+                <div class="photo-frame">
+                    <!-- 👇 TYPE YOUR FILE NAME HERE -->
+                    <img src="3.png" alt="Memory 3">
+                </div>
+                <div class="text-area">
+                    <p>Looking at this picture reminds me of how happy we were. I hope we can go back to that. Please forgive me.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 5: Blank Page -->
+        <!-- Page 5 -->
+<div class="page" id="page-5">
+    <div class="book-content blank-page">
+        <div class="photo-frame small">
+            <img src="4.png" alt="Us">
+        </div>
+
+        <div class="text-area">
+            <p>Will you forgive me?</p>
+
+            <div class="choice-buttons">
+                <button class="yes-btn" onclick="showLove()">Yes ❤️</button>
+                <button class="no-btn" onclick="moveNo()">No 😜</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Love Modal -->
+<div class="love-modal" id="loveModal">
+    <div class="love-card">
+        <h2>Thank You ❤️</h2>
+        <p>
+            I promise to treat you better,  
+            make you smile more,  
+            and never hurt you again.  
+
+            You mean the world to me 🌎💖
+        </p>
+        <button onclick="closeLove()">Close</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="controls">
+        <button id="prevBtn" onclick="prevPage()">❮ Prev</button>
+        <button id="musicBtn" onclick="toggleMusic()">🎵 Play Song</button>
+        <button id="nextBtn" onclick="nextPage()">Next ❯</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="s1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

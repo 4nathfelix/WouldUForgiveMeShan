@@ -1,0 +1,392 @@
+/* ===============================
+   GLOBAL
+=================================*/
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #ffe6ea;
+    font-family: 'Patrick Hand', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+}
+
+/* ===============================
+   FLOATING DECOR
+=================================*/
+.heart {
+    position: absolute;
+    color: #ffb3c1;
+    font-size: 2rem;
+    animation: float 6s infinite ease-in-out;
+    z-index: -1;
+}
+
+.heart-1 { top: 10%; left: 10%; }
+.heart-2 { top: 20%; right: 15%; }
+.heart-3 { bottom: 15%; left: 20%; }
+.heart-4 { top: 34%; left: 17%; }
+.heart-5 { bottom: 22%; right: 20%; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* ===============================
+   BOOK CONTAINER
+=================================*/
+.book-container {
+    position: relative;
+    width: 90vw;
+    max-width: 400px;
+    height: 80vh;
+    max-height: 550px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+    border: 8px solid #fff;
+    outline: 2px solid #ffc2d1;
+}
+
+/* ===============================
+   PAGES
+=================================*/
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fffaf0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.page.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ===============================
+   COVER
+=================================*/
+#page-1 {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.cover-content h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.open-btn {
+    margin-top: 30px;
+    padding: 10px 25px;
+    background: white;
+    color: #ff9a9e;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.open-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ===============================
+   PHOTO
+=================================*/
+.photo-frame {
+    width: 100%;
+    max-width: 320px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 6px solid white;
+    outline: 3px solid #ffc2d1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    margin: 0 auto 15px auto;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-frame.small {
+    height: 150px;
+}
+
+/* ===============================
+   TEXT
+=================================*/
+.text-area {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.4;
+    padding: 0 10px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    color: #ff9a9e;
+}
+
+/* ===============================
+   YES / NO BUTTONS (VERTICAL CENTER)
+=================================*/
+.choice-buttons {
+    margin-top: 25px;
+    position: relative;
+    height: 220px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+
+/* Default tombol */
+.yes-btn, .no-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* YES */
+.yes-btn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+/* NO (awal jangan absolute dulu) */
+.no-btn {
+    background-color: #999;
+    color: white;
+}
+/* ===============================
+   MODAL
+=================================*/
+.love-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.love-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 320px;
+    text-align: center;
+    animation: popUp 0.4s ease;
+}
+
+.love-card h2 {
+    color: #ff4d6d;
+}
+
+.love-card button {
+    margin-top: 15px;
+    padding: 8px 18px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@keyframes popUp {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ===============================
+   CONTROLS
+=================================*/
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.controls button {
+    padding: 8px 16px;
+    border: 2px solid #ff9a9e;
+    background: white;
+    color: #ff9a9e;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.controls button:hover {
+    background: #ff9a9e;
+    color: white;
+}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .book-container {
+        width: 95vw;
+        height: 75vh;
+    }
+
+    .cover-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .text-area {
+        font-size: 0.95rem;
+    }
+
+    .photo-frame {
+        height: 150px;
+    }
+
+    .signature {
+        font-size: 1.2rem;
+    }
+
+    .controls {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .controls button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    .book-container {
+        width: 85vw;
+        height: 80vh;
+    }
+}
+
+/* =================================
+   EXTRA RESPONSIVE IMPROVEMENT
+   (TAMBAHAN TANPA MENGUBAH STYLE ASLI)
+==================================== */
+
+/* HP sangat kecil */
+@media (max-width: 360px) {
+
+    .book-container {
+        height: 70vh;
+        border-width: 5px;
+    }
+
+    .choice-buttons {
+        height: 180px;
+        gap: 40px;
+    }
+
+    .yes-btn, .no-btn {
+        width: 80%;
+        max-width: 200px;
+    }
+
+    .text-area {
+        font-size: 0.85rem;
+    }
+
+    .cover-content h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* HP Standar */
+@media (max-width: 480px) {
+
+    .yes-btn, .no-btn {
+        width: 70%;
+        max-width: 220px;
+    }
+
+    .choice-buttons {
+        height: 200px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .book-container {
+        max-width: 500px;
+        height: 75vh;
+    }
+
+    .photo-frame {
+        max-width: 400px;
+        height: 220px;
+    }
+
+    .yes-btn, .no-btn {
+        width: 220px;
+    }
+}
+
+/* Desktop besar */
+@media (min-width: 1025px) {
+
+    .book-container {
+        max-width: 550px;
+        height: 75vh;
+    }
+
+    .photo-frame {
+        max-width: 420px;
+        height: 240px;
+    }
+
+    .text-area {
+        font-size: 1.2rem;
+    }
+
+    .yes-btn, .no-btn {
+        width: 240px;
+        font-size: 1.1rem;
+    }
+}
